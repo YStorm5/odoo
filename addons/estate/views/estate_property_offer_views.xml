@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Action -->
+    <record id="estate_property_offer_action" model="ir.actions.act_window">
+        <field name="name">Property Offers</field>
+        <field name="res_model">estate.property.offer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('property_type_id','=',active_id)]</field>
+    </record>
+
+    <!-- List view -->
+    <record id="estate_property_offer_view_tree" model="ir.ui.view">
+        <field name="name">estate_property_offer_view_tree</field>
+        <field name="model">estate.property.offer</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" decoration-success="status == 'accepted'" decoration-danger="status == 'refused'">
+                <field name="price"/>
+                <field name="partner_id"/>
+                <field name="validity"/>
+                <button name="accepted_offer" string="" type="object" icon="fa-check" invisible="status == 'accepted' or status == 'refused'" />
+                <button name="refused_offer" string="" type="object" icon="fa-close" invisible="status == 'accepted' or status == 'refused'"/>
+                <field name="date_deadline"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="estate_property_offer_view_form" model="ir.ui.view">
+        <field name="name">estate_property_offer_view_tree</field>
+        <field name="model">estate.property.offer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="price"/>
+                        <field name="partner_id"/>
+                        <field name="validity"/>
+                        <field name="date_deadline"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
