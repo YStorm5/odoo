@@ -3,8 +3,6 @@ from odoo.exceptions import UserError,ValidationError
 from dateutil.relativedelta import relativedelta
 from odoo.tools.float_utils import float_is_zero
 
-import ipdb
-
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Estate proptery"

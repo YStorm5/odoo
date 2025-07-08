@@ -1,15 +1,16 @@
 <templates>
     <t t-name="awesome_owl.Card">
-        <div class="card d-inline-block m-2" style="width: 18rem;">
-            <div class="card-body">
+        <div class="card col-12">
+            <div class="card-body d-flex justify-content-around">
                 <h5 class="card-title">
-                    <t t-out="props.title"/>
+                    <t t-out="estate.name"/>
                 </h5>
-                <button class="btn btn-primary" t-on-click="onToggle">Toggle</button>
-                <p class="card-text" t-if="isOpen.value">
-                    <t t-slot="default"/>
-                    <t t-slot="title"/>
-                </p>
+                <button class="btn btn-sm btn-primary" t-on-click="onToggle">Toggle</button>
+            </div>
+            <div class="card-text d-flex justify-content-center" t-if="isOpen.value">
+                <t t-out="estate.description"/>
+                <!-- <t t-slot="default"/>
+                    <t t-slot="title"/> -->
             </div>
         </div>
     </t>

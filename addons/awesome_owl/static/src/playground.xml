@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-
     <t t-name="awesome_owl.playground">
-        <div class="p-3">
-            hello world
-            <Counter onChange.bind="incrementSum"/>
-            <Counter onChange.bind="incrementSum"/>
+        <!-- <h1>
+            <t t-out="input.name"/>
+        </h1>
+        <input t-model="input.name" /> -->
+
+        <div class="container">
+            <h1 t-out="data"></h1>
+            <h1 t-if="state.estates.length == 0">Fetching data....</h1>
+            <t t-else="" t-foreach="state.estates" t-as="estate" t-key="estate.id">
+                <Card estate="estate"/>
+            </t>
         </div>
-        <div>
-            <Card title="'card 1'">
-                <span>HI</span>
-                <t t-set-slot="title">
-                    <Counter onChange.bind="incrementSum"/>
-                </t>
-            </Card>
-            <Card title="'card 2'">
-                <span>HI</span>
-                <t t-set-slot="title">
-                    Specific Title. It could be html also.
-                </t>
-            </Card>
-        </div>
-        <div>
-            This sum is: <t t-esc="sum.value"/>
-        </div>
-        <div class="card m-4">
+        <!-- <div class="card m-4">
             <TodoList/>
-        </div>
+        </div> -->
     </t>
-   
 
 </templates>

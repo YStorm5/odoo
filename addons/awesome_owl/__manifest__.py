@@ -44,6 +44,7 @@
             'web/static/src/core/browser/browser.js',
             'web/static/src/core/registry.js',
             'web/static/src/core/assets.js',
+            'web/static/lib/jquery/jquery.js',
             'awesome_owl/static/src/**/*',
         ],
     },

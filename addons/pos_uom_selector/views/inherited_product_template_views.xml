@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="inherited_product_template_view_form" model="ir.ui.view">
+        <field name="name">inherited.product.template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='uom_id']" position="after">
+                <field name="multi_uom_ok"/>
+                <field name="uom_price_ids" invisible="not multi_uom_ok" options="{'create_text': 'Add UOM Price'}" widget="one2many">
+                    <tree string="UOM" editable="bottom">
+                        <field name="uom_id" options="{'no_create': true, 'no_open': true}"/>
+                        <field name="price"/>
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+</odoo>

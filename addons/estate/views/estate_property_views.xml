@@ -57,7 +57,7 @@
                                 <field name="postcode" nolabel="True"/>
                                 <field name="date_availability" string="Available From"/>
                             </group>
-                            
+
                         </group>
                         <group>
                             <field name="expected_price"/>
@@ -91,7 +91,7 @@
                     </notebook>
 
                 </sheet>
-                
+
             </form>
         </field>
     </record>
@@ -133,7 +133,7 @@
                             <field name="name" class="fw-bold"/>
                             <div>
                                 Expected Price: 
-                                <field name="expected_price"/>   
+                                <field name="expected_price"/>
                             </div>
                             <div t-if="record.state.raw_value == 'offer received'">
                                 Best Offer: 

@@ -3,3 +3,4 @@ from . import estate_property_tag
 from . import estate_property_offer
 from . import estate_property
 from . import inherited_res_user
+from . import ir_http
